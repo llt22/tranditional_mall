@@ -2,7 +2,7 @@
 
 var config = {
     // 服务器域名
-    serviceHost: ''
+    serverHost: ''
 }
 
 var _mm = {
@@ -32,7 +32,37 @@ var _mm = {
     },
     doLogin: function () {
         window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href)
-    }
+    },
+    // 生成请求路径
+    getServerURL: function (path) {
+        return config.serverHost + path
+    },
+    // url 参数转 对象存储
+    getURLParam: function (url) {
+        var url = url || ''
+        var index = url.indexOf('?')
+        var obj = {}
+        var str = ''
+        if (index < 0) {
+            return obj
+        } else {
+            str = url.slice(index + 1)
+        }
+
+        var j = str.indexOf('&')
+        if (j < 0) {
+            var arr = str.split('=')
+            obj[arr[0]] = arr[1]
+            return obj
+        } else {
+            var arr = str.split('&')
+            for (var i = 0, len = arr.length; i < len; i++) {
+                var a = arr[i].split('=')
+                obj[a[0]] = a[1]
+            }
+            return obj
+        }
+    },
 }
 
 module.exports = _mm
