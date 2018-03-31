@@ -4,7 +4,7 @@ li, ul {
     padding: 0;
 }
 
-a, a:hover,a:visited {
+a, a:hover,a:visited, .link {
     color: #000;
     text-decoration: none;
     cursor: pointer;

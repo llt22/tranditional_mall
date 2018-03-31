@@ -5,9 +5,8 @@
     <title>index</title>
 </head>
 <body>
-<div>我是div</div>
-<a href="" class="btn">我是模拟的按钮</a>
-<div class="loading"></div>
+<%= require('html-loader!./templates/nav-simple.html') %>
+<%= require('html-loader!./templates/nav-normal.html') %>
 <%= require('html-loader!./templates/footer.html') %>
 </body>
 </html>

@@ -1,0 +1,11 @@
+.nav-simple {
+    line-height: 60px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ff661b !important;
+}
+
