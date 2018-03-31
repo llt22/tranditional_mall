@@ -1,0 +1,22 @@
+{
+  "name": "tranditional_mall",
+  "version": "1.0.0",
+  "description": "传统库开发的电商项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llt22/tranditional_mall.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llt22/tranditional_mall/issues"
+  },
+  "homepage": "https://github.com/llt22/tranditional_mall#readme",
+  "devDependencies": {
+    "webpack": "^1.15.0"
+  }
+}
