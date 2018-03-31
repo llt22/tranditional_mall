@@ -1,4 +1,6 @@
 var webpack = require('webpack')
+var ExtractTextPlugin   = require('extract-text-webpack-plugin')
+var path = require('path')
 
 var config = {
     entry: {
@@ -7,7 +9,7 @@ var config = {
         'login': ['./src/page/login/index.js'],
     },
     output: {
-        path: './dist',
+        path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js'
     },
     externals: {
@@ -17,11 +19,12 @@ var config = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common',
             filename: 'js/base.js'
-        })
+        }),
+        new ExtractTextPlugin("css/[name].css"),
     ],
     module: {
         loaders: [
-            {test: /\.css/, loader: 'style-loader!css-loader'}
+            { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
         ]
     }
 }
