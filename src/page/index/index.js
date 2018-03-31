@@ -1,9 +1,12 @@
 var util = require('../../util/index')
 require('./index.css')
-console.log('hello')
-function fn() {
-    console.log(util)
-    console.log('fn---')
-    util.e('div').innerHTML = 'jjj'
-}
-fn()
+
+util.request({
+    url: '/product/list.do?keyword=1',
+    success: function (res) {
+        console.log('res', res)
+    },
+    error: function (err) {
+        console.log('err', err)
+    }
+})
