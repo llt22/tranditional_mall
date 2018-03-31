@@ -1,7 +1,18 @@
 var webpack = require('webpack')
-var ExtractTextPlugin   = require('extract-text-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
+
+var getHtmlConfig = function (pageName) {
+    return {
+        template: './src/view/'+ pageName +'.html',
+        filename: 'view/'+ pageName +'.html',
+        inject: true,
+        hash: true,
+        // 要引入哪几个模块，因为模块中引入样式，所以样式不用单独写
+        chunks: ['common', pageName]
+    }
+}
 
 var config = {
     entry: {
@@ -24,18 +35,12 @@ var config = {
         }),
         // 提交 css 到单独文件
         new ExtractTextPlugin("css/[name].css"),
-        new HtmlWebpackPlugin({
-            template: './src/view/index.html',
-            filename: 'view/index.html',
-            inject: true,
-            hash: true,
-            // 要引入哪几个模块，因为模块中引入样式，所以样式不用单独写
-            chunks: ['common', 'index']
-        })
+        new HtmlWebpackPlugin( getHtmlConfig('index')),
+        new HtmlWebpackPlugin( getHtmlConfig('login'))
     ],
     module: {
         loaders: [
-            { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
+            {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
         ]
     }
 }
