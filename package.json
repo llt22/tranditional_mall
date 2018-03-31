@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/llt22/tranditional_mall#readme",
   "devDependencies": {
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.20.3",
     "webpack": "^1.15.0"
   }
 }

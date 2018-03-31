@@ -18,7 +18,12 @@ var config = {
             name: 'common',
             filename: 'js/base.js'
         })
-    ]
+    ],
+    module: {
+        loaders: [
+            {test: /\.css/, loader: 'style-loader!css-loader'}
+        ]
+    }
 }
 
 module.exports = config
