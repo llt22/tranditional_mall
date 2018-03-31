@@ -1,3 +1,4 @@
-module.exports = {
-    host: 'localhost:8080'
-}
+'use strict'
+
+require('normalize.css')
+require('./layout.css')

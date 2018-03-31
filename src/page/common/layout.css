@@ -1,0 +1,58 @@
+li, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:hover,a:visited {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*定宽布局*/
+.w {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+/*清除浮动*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/*隐藏*/
+.hide {
+    display: none;
+}
+
+/*左浮动*/
+.fl {
+    float: left;
+}
+
+/*右浮动*/
+.fr {
+    float: right;
+}
+
+.btn {
+    display: inline-block;
+    padding:  0 20px;
+    line-height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #000000;
+}
+
+.loading {
+    width: 65px;
+    height: 65px;
+    background: url('../../image/icon/loading.gif') no-repeat;
+}
