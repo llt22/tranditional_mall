@@ -1,4 +1,7 @@
 var util = require('../../util/index')
 require('./index.css')
-require('page/common/nav-simple/index')
-require('page/common/nav-normal/index')
+
+// 引入nav
+require('../common/nav-normal/index')
+// 引入header
+require('../common/header/index')
