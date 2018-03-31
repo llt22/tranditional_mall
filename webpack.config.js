@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var ExtractTextPlugin   = require('extract-text-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
 
 var config = {
@@ -16,11 +17,21 @@ var config = {
         'jquery': 'window.jQuery'
     },
     plugins: [
+        // 独立通用模块
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common',
             filename: 'js/base.js'
         }),
+        // 提交 css 到单独文件
         new ExtractTextPlugin("css/[name].css"),
+        new HtmlWebpackPlugin({
+            template: './src/view/index.html',
+            filename: 'view/index.html',
+            inject: true,
+            hash: true,
+            // 要引入哪几个模块，因为模块中引入样式，所以样式不用单独写
+            chunks: ['common', 'index']
+        })
     ],
     module: {
         loaders: [
