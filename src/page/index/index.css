@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;
+    font-size: 40px;
+}
 body {
-    background: red;
+    background: url('../../image/download.jpg');
 }
