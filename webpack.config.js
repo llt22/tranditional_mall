@@ -57,6 +57,7 @@ var config = {
     module: {
         loaders: [
             {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
+            {test: /\.string$/, loader: 'html-loader'},
             // limit=100 小于 100k 的文件会转 base4 格式
             // name=resource/[name].[ext] 放在指定文件夹
             {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]'},

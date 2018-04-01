@@ -7,6 +7,10 @@
 <body>
 <%= require('html-loader!./templates/nav-normal.html') %>
 <%= require('html-loader!./templates/header.html') %>
+<div class="page-wrapp">
+    <%= require('html-loader!./templates/nav-side.html') %>
+    <div class="content with-nav">content</div>
+</div>
 <%= require('html-loader!./templates/footer.html') %>
 </body>
 </html>
