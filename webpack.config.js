@@ -18,10 +18,11 @@ var getHtmlConfig = function (entryName, title) {
 
 var config = {
     entry: {
-        'common': ['./src/page/common/index.js'],
-        'index': ['./src/page/index/index.js'],
-        'user-login': ['./src/page/user-login/index.js'],
-        'result': ['./src/page/result/index.js'],
+        'common': ['page/common/index.js'],
+        'index': ['page/index/index.js'],
+        'result': ['page/result/index.js'],
+        'user-login': ['page/user-login/index.js'],
+        'user-register': ['page/user-register/index.js'],
     },
 
     // devServer: {
@@ -54,8 +55,10 @@ var config = {
         // 提交 css 到单独文件
         new ExtractTextPlugin("css/[name].css"),
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
+
     ],
     module: {
         loaders: [
