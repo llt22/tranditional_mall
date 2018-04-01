@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%= require('html-loader!./templates/head.html') %>
-    <title>index</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
 <%= require('html-loader!./templates/nav-normal.html') %>

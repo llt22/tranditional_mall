@@ -4,9 +4,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
 var WEBPACK_ENV =  process.env.WEBPACK_ENV || 'dev'
 
-var getHtmlConfig = function (pageName) {
+var getHtmlConfig = function (pageName, title) {
     return {
         template: './src/view/' + pageName + '.html',
+        title: title,
         filename: 'view/' + pageName + '.html',
         inject: true,
         hash: true,
@@ -20,6 +21,7 @@ var config = {
         'common': ['./src/page/common/index.js'],
         'index': ['./src/page/index/index.js'],
         'login': ['./src/page/login/index.js'],
+        'result': ['./src/page/result/index.js'],
     },
 
     // devServer: {
@@ -51,8 +53,9 @@ var config = {
         }),
         // 提交 css 到单独文件
         new ExtractTextPlugin("css/[name].css"),
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login'))
+        new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
     ],
     module: {
         loaders: [
