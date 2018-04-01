@@ -48,7 +48,7 @@ var page = {
             formError.hide()
             userAPI.login(formData, function (res) {
                 console.log(res)
-                window.location.href = _mm.getURLParam('redirect')
+                window.location.href = _mm.getURLParam('redirect') + '.html' || 'index.html'
             }, function (err) {
                 formError.show(err)
             })
