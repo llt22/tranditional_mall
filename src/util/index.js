@@ -13,7 +13,8 @@ var _mm = {
         $.ajax({
             type: param.method || 'get',
             url: param.url || '',
-            dataType: param.data || 'json',
+            dataType: param.type || 'json',
+            data: param.data || '',
             success: function (res) {
                 // 请求成功，并且返回数据
                 if (res.status === 0) {
@@ -33,7 +34,7 @@ var _mm = {
         })
     },
     doLogin: function () {
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href)
+        window.location.href = './user-user-login.html?redirect=' + encodeURIComponent(window.location.href)
     },
 
     // 生成请求路径
